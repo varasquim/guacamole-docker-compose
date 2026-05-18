@@ -118,7 +118,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: 'RootPassword123'
       MYSQL_DATABASE: guacamole_db
-      MYSQL_USERNAME: guacamole_user
+      MYSQL_USER: guacamole_user
       MYSQL_PASSWORD: 'ChooseYourOwnPasswordHere1234'
     volumes:
       - ./init:/docker-entrypoint-initdb.d:ro
@@ -126,6 +126,7 @@ services:
   # guacamole
   guacamole:
     container_name: guacamole_compose
+    image: guacamole/guacamole:1.6.0
     group_add:
       - "1000"
     depends_on:
@@ -135,10 +136,9 @@ services:
       GUACD_HOSTNAME: guacd
       MYSQL_HOSTNAME: mysql
       MYSQL_DATABASE: guacamole_db
-      MYSQL_USERNAME: guacamole_user
+      MYSQL_USER: guacamole_user
       MYSQL_PASSWORD: 'ChooseYourOwnPasswordHere1234'
       RECORDING_SEARCH_PATH: /record
-    image: guacamole/guacamole:1.6.0
     networks:
       - guacnetwork_compose
     volumes:
