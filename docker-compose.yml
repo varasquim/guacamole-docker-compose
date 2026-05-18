@@ -104,6 +104,8 @@ services:
     image: guacamole/guacd:1.6.0
     networks:
       - guacnetwork_compose
+    environment:
+      LOG_LEVEL: debug
     restart: always
     volumes:
     - ./drive:/drive:rw
@@ -138,6 +140,7 @@ services:
       MYSQL_DATABASE: guacamole_db
       MYSQL_USER: guacamole_user
       MYSQL_PASSWORD: 'varaska'
+      LOG_LEVEL: debug
       RECORDING_SEARCH_PATH: /record
     networks:
       - guacnetwork_compose
