@@ -141,6 +141,7 @@ services:
       MYSQL_USER: guacamole_user
       MYSQL_PASSWORD: 'varaska'
       LOG_LEVEL: debug
+      TOTP_ENABLED: "true"
       RECORDING_SEARCH_PATH: /record
     networks:
       - guacnetwork_compose
