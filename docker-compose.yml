@@ -142,6 +142,7 @@ services:
       MYSQL_PASSWORD: 'varaska'
       LOG_LEVEL: debug
       TOTP_ENABLED: "true"
+      RECORDING_ENABLED: "true"
       RECORDING_SEARCH_PATH: /record
     networks:
       - guacnetwork_compose
